@@ -66,3 +66,43 @@ function encode(texte) {
 console.log(morseTexte);
 }
 encode("Bonjour");
+
+//Etape 4:
+const morseToLatin = {
+  '-': "T",
+  '--': "M",
+  '---': "O",
+  '--.': "G",
+  '--.-': "Q",
+  '--..': "Z",
+  '-.': "N",
+  '-.-': "K",
+  '-.--': "Y",
+  '-.-.': "C",
+  '-..': "D",
+  '-..-': "X",
+  '-...': "B",
+  '.': "E",
+  '.-': "A",
+  '.--': "W",
+  '.---': "J",
+  '.--.': "P",
+  '.-.': "R",
+  '.-..': "L",
+  '..': "I",
+  '..-': "U",
+  '..-.': "F",
+  '...': "S",
+  '...-': "V",
+  '....': "H"
+}
+//ajout fonction pour traduire de morse en latin
+function decode (myMorseChar) {
+  if (myMorseChar in morseToLatin) {
+    let myLatinChar = morseToLatin[myMorseChar];
+    console.log (myLatinChar);
+  } else {
+    console.log(myMorseChar + " n'est pas reconnu");
+  }
+}
+decode("-..");
