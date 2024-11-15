@@ -58,6 +58,10 @@ function encode(texte) {
   //console.log(latinArray);
   for(i=0; i<latinArray.length;i++){
   morseTexte += (translateLatinCharacter(latinArray[i]));
+  //pour ajouter espace entre les caractères morse
+  if(i < latinArray.length-1){
+    morseTexte+=' ';
+  }
 }
 console.log(morseTexte);
 }
