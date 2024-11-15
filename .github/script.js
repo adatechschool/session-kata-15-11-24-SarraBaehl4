@@ -3,9 +3,10 @@
 
 function getLatinCharacterList(Mytexte) {
   let myTexteArray = Mytexte.split("");
-    console.log(myTexteArray);
-  }
-getLatinCharacterList("Hello,world");
+  return myTexteArray;
+}
+//getLatinCharacterList("Hello,world");
+
 //Etape2:
 //une fonction qui prend en paramètre un caractère et renvoie sa correspondance en morse
 const latinToMorse = {
@@ -39,9 +40,23 @@ const latinToMorse = {
 function translateLatinCharacter(myLatinChar) {
   if (myLatinChar in latinToMorse) {
     let myMorseChar = latinToMorse[myLatinChar];
-    console.log(myMorseChar);
+    return myMorseChar;
   } else {
     console.log(myLatinChar + " n'est pas reconnu");
   }
 }
-translateLatinCharacter("A");
+//translateLatinCharacter("A")
+
+//Etape 3:
+//une 3eme fonction qui utilise la fonc1 et fonc2 pour traduire du texte latin en morse
+
+function encode(texte) {
+  result = '';
+  const texteMaj = texte.toUpperCase();
+  //console.log(texteMaj);
+  let latinArray = getLatinCharacterList(texteMaj);
+  //console.log(latinArray);
+  result = (translateLatinCharacter(latinArray));
+  console.log(result);
+}
+encode("a");
