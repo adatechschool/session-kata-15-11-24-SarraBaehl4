@@ -51,12 +51,14 @@ function translateLatinCharacter(myLatinChar) {
 //une 3eme fonction qui utilise la fonc1 et fonc2 pour traduire du texte latin en morse
 
 function encode(texte) {
-  result = '';
+  let morseTexte = '';
   const texteMaj = texte.toUpperCase();
   //console.log(texteMaj);
   let latinArray = getLatinCharacterList(texteMaj);
   //console.log(latinArray);
-  result = (translateLatinCharacter(latinArray));
-  console.log(result);
+  for(i=0; i<latinArray.length;i++){
+  morseTexte += (translateLatinCharacter(latinArray[i]));
 }
-encode("a");
+console.log(morseTexte);
+}
+encode("Bonjour");
